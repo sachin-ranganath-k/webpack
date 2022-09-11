@@ -1,4 +1,10 @@
-const {add, subtract}=require("./functions")
+const {add:additionOfNumbers, subtract}=require("./functions")
 
-const result=add(10,20)
+
+function add(){
+    console.log("Hi Hello");
+}
+
+add();
+const result=additionOfNumbers(10,20);
 console.log(result);
