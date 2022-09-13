@@ -1,10 +1,7 @@
-const {add:additionOfNumbers, subtract}=require("./functions")
+import * as operations from './functions'
 
+const additionResult=operations.add(10,20);
+console.log(additionResult);
 
-function add(){
-    console.log("Hi Hello");
-}
-
-add();
-const result=additionOfNumbers(10,20);
-console.log(result);
+const subtractResult= operations.subtract(20,10);
+console.log(subtractResult);
