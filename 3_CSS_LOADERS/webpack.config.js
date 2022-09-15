@@ -1,18 +1,20 @@
-const path=require('path');
+const path = require("path");
 
-module.exports={
- entry:"./src/index.js",  //Starting entry file
- output:{
-    filename:"bundle.js",   //File named bundle.js will be outputted by webpack
-    path:path.resolve(__dirname,"dist") //bundle.js file will be created in the directory dist. 
+module.exports = {
+  entry: "./src/index.js", //Starting entry file
+  output: {
+    filename: "bundle.js", //File named bundle.js will be outputted by webpack
+    path: path.resolve(__dirname, "dist"), //bundle.js file will be created in the directory dist.
     //dist directory will be created by webpack later
-},
-module:{
-    rules:[
-        {
+  },
+  module: {
+    rules: [
+      {
         test: /.css$/,
-        use:["style-loader", "css-loader"]
-        }
-    ]
-}
-}
+        //use:["style-loader", "css-loader"] //The problem with this is, the css will overwritten
+        //So use like below
+        use: [{ loader: "style-loader" }, { loader: "css-loader", options:{modules:true} }],
+      },
+    ],
+  },
+};

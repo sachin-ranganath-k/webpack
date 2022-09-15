@@ -1,5 +1,6 @@
-import './index.css'
 import _ from "lodash";
+import './clearButton'
+
 
 document.getElementById("button1").addEventListener("click", function () {
   const el = document.getElementById("header");
